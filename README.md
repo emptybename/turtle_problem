@@ -42,7 +42,7 @@ Robot shutting down.
 ```
 
 #### Assumptions-
-- Number of robot is one in the Game
+- Number of robot is one in the application
 - If user input invalid input, asking for valid input(not terminating the app)
 
 
