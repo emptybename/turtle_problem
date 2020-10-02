@@ -44,4 +44,10 @@ Robot shutting down.
 #### Assumptions-
 - Number of robot is one in the Game
 - If user input invalid input, asking for valid input(not terminating the app)
+
+
+### How to Run?
+```
+python3 main.py
+```
  
