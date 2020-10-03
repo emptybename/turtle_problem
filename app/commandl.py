@@ -1,14 +1,14 @@
 from .command import Command
 from .interfaces.game_interface import GameInterface
 from .move import Move
+from .managers.command_manager import CommandManager
 
 
 class CommandL(Command):
-    def execute(self, game: GameInterface) -> bool:
+    def execute(self, game: GameInterface, manager=CommandManager()) -> bool:
         robot = game.current_robot
-        new_position = robot.current_position.move_left()
         move = Move(robot)
-        robot.set_current_position(new_position)
+        robot.current_position = manager.turn_left(robot)
         move.final_position = robot.current_position
         game.add_move(move)
         print(robot)

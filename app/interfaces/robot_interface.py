@@ -8,5 +8,6 @@ class RobotInterface(ABC):
     @abstractmethod
     def current_position(self): pass
 
+    @current_position.setter
     @abstractmethod
-    def set_current_position(self, position: PositionInterface): pass
+    def current_position(self, position: PositionInterface): pass

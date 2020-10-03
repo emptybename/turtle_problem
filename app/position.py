@@ -3,18 +3,26 @@ from .interfaces.position_interface import PositionInterface
 
 class Position(PositionInterface):
 
-    def __init__(self, x: int, y: int):
-        self.x = x
-        self.y = y
+    def __init__(self, x=0, y=0):
+        self._x = x
+        self._y = y
 
     @property
-    def facing(self): pass
+    def x(self):
+        return self._x
 
-    def move_left(self):
-        pass
+    @x.setter
+    def x(self, x):
+        self._x = x
 
-    def move_right(self):
-        pass
+    @property
+    def y(self):
+        return self._y
 
-    def move_forward(self):
+    @y.setter
+    def y(self, y):
+        self._y = y
+
+    @property
+    def facing(self):
         pass

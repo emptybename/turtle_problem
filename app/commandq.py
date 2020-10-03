@@ -1,10 +1,11 @@
 from .command import Command
 from .interfaces.game_interface import GameInterface
+from .managers.command_manager import CommandManager
 
 
 class CommandQ(Command):
-    def execute(self, game: GameInterface) -> bool:
+    def execute(self, game: GameInterface, manager=CommandManager()) -> bool:
+        from .command_list import CommandList
         print("Command the robot with:")
-        for command_type in self.COMMAND_LIST:
-            print(command_type.identifier + " - " + command_type.description)
+        print(CommandList())
         return True
