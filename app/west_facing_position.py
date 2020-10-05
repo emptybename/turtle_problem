@@ -1,4 +1,6 @@
 from .position import Position
+from .south_facing_position import SouthFacingPosition
+from .north_facing_position import NorthFacingPosition
 
 
 class WestFacingPosition(Position):
@@ -8,3 +10,14 @@ class WestFacingPosition(Position):
     @property
     def facing(self):
         return "West"
+
+    def turn_left(self):
+        # from .south_facing_position import SouthFacingPosition
+        return SouthFacingPosition(self.x, self.y)
+
+    def turn_right(self):
+        # from .north_facing_position import NorthFacingPosition
+        return NorthFacingPosition(self.x, self.y)
+
+    def move_forward(self):
+        return WestFacingPosition(self.x - 1, self.y)

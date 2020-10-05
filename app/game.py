@@ -1,6 +1,6 @@
 from .interfaces.game_interface import GameInterface
 from .interfaces.robot_interface import RobotInterface
-from .interfaces.move_interface import MoveInterface
+from .move import Move
 from typing import List
 
 
@@ -9,10 +9,10 @@ class Game(GameInterface):
         self._moves = []
         self._current_robot = robot
 
-    def moves(self) -> List[MoveInterface]:
+    def moves(self) -> List[Move]:
         return self._moves
 
-    def add_move(self, move: MoveInterface):
+    def add_move(self, move: Move):
         self._moves.append(move)
 
     @property

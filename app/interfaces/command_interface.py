@@ -1,9 +1,8 @@
 from abc import ABC, abstractmethod
-from .game_interface import GameInterface
-from .manager.command_manager_interface import CommandManagerInterface
+from .response_interface import ResponseInterface
 
 
 class CommandInterface(ABC):
 
     @abstractmethod
-    def execute(self, game: GameInterface, manager: CommandManagerInterface) -> bool: pass
+    def execute(self) -> ResponseInterface: pass

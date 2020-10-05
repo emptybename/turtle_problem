@@ -11,18 +11,16 @@ class Position(PositionInterface):
     def x(self):
         return self._x
 
-    @x.setter
-    def x(self, x):
-        self._x = x
-
     @property
     def y(self):
         return self._y
 
-    @y.setter
-    def y(self, y):
-        self._y = y
-
     @property
     def facing(self):
         pass
+
+    def turn_left(self): pass
+
+    def turn_right(self): pass
+
+    def move_forward(self): pass

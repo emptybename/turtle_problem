@@ -1,15 +1,29 @@
-from .command import Command
-from .interfaces.game_interface import GameInterface
-from .move import Move
-from .managers.command_manager import CommandManager
+from .interfaces.command_interface import CommandInterface
+from .interfaces.robot_interface import RobotInterface
+from .command_response import CommandResponse
 
 
-class CommandR(Command):
-    def execute(self, game: GameInterface, manager=CommandManager()) -> bool:
-        robot = game.current_robot
-        move = Move(robot)
-        robot.current_position = manager.turn_right(robot)
-        move.final_position = robot.current_position
-        game.add_move(move)
-        print(robot)
-        return True
+class CommandR(CommandInterface):
+    def __init__(self, robot: RobotInterface):
+        self._robot = robot
+
+    @property
+    def command(self):
+        return "R"
+
+    @property
+    def description(self):
+        return "turn right"
+
+    @property
+    def robot(self):
+        return self._robot
+
+    def execute(self) -> CommandResponse:
+        self.robot.turn_right()
+        print(self.robot)
+        return CommandResponse()
+
+    # We can add this feature as well
+    def undo(self):
+        pass
