@@ -50,4 +50,5 @@ Robot shutting down.
 ```
 python3 main.py
 ```
- 
+
+![alt Class Diagram](class_diagram.png "Class Diagram")
